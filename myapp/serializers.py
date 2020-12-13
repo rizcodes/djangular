@@ -4,4 +4,4 @@ from myapp.models import TestModel
 class TestModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = TestModel
-        fields = ('firstname', 'lastname')
+        fields = ('id', 'firstname', 'lastname')

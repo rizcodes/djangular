@@ -1,7 +1,12 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from myapp import views
 
-from . import views
+router = routers.DefaultRouter()
+router.register(r'test', views.TestViewSet)
 
 urlpatterns = [
-    path('', views.myapp, name='myapp')
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls',
+                              namespace='rest_framework'))
 ]
