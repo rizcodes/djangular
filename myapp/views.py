@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from django.views.generic import TemplateView
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 
 from myapp.serializers import TestModelSerializer
 from myapp.models import TestModel
@@ -11,7 +11,7 @@ class IndexView(TemplateView):
 
 class TestViewSet(viewsets.ModelViewSet):
     queryset = TestModel.objects.all().order_by('firstname')
-    serializer_class = TestModelSerializer
+    serializer_class = TestModelSerializer 
 
 def myapp(request):
     return HttpResponse("MYAPP PAGE")
