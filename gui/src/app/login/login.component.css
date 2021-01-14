@@ -1,0 +1,17 @@
+.main-wrapper {
+  margin: 5px;
+  border: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: inherit;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: left;
+  font-size: medium;
+}
+.error-message {
+  font-style: italic;
+  font-size: smaller;
+  color: crimson;
+}
