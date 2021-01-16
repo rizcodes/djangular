@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterService } from './services/router.service';
 import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
+import { CanActivateGuard } from './can-activate.guard';
 
 const routes: Routes = [
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [CanActivateGuard] // Dashboard is displayed when CanActivateGuard return 'true'.
   }
 ];
 
@@ -62,7 +64,8 @@ const routes: Routes = [
   providers: [
     RouterService,
     AuthenticationService,
-    UserService
+    UserService,
+    CanActivateGuard
   ],
   bootstrap: [AppComponent]
 })

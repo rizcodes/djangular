@@ -9,6 +9,11 @@ export class RouterService {
   constructor(private router: Router) { }
 
   // tslint:disable-next-line:typedef
+  routeToLogin() {
+    this.router.navigate(['login']);
+  }
+
+  // tslint:disable-next-line:typedef
   routeToDashboard() {
     this.router.navigate(['dashboard']);
   }
